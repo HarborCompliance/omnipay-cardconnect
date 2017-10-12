@@ -25,7 +25,8 @@ class PurchaseRequest extends AbstractRequest
     		'postal'    => $card->getBillingPostcode(),
             'retref'    => $this->getTransactionReference(),
     		'tokenize'  => "Y",
-    		'capture'   => "Y"
+    		'capture'   => "Y",
+            'userfields' => $this->getUserfields()
     	);
         return $data;
     }
@@ -33,5 +34,15 @@ class PurchaseRequest extends AbstractRequest
     public function getEndpoint()
     {
         return $this->getEndpointBase() . "/auth";
+    }
+    
+        public function setUserfields($value)
+    {
+        return $this->setParameter('userfields', $value);
+    }
+
+    public function getUserfields()
+    {
+        return $this->getParameter('userfields');
     }
 }
