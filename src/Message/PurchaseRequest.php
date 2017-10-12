@@ -18,7 +18,7 @@ class PurchaseRequest extends AbstractRequest
     		'currency'  => $this->getCurrency(),
     		'orderid'   => $this->getTransactionId(),
     		'name'      => $card->getName(),
-    		'street'    => $card->getBillingAddress1(),
+    		'address'    => $card->getBillingAddress1(),
     		'city'      => $card->getBillingCity(),
     		'region'    => $card->getBillingState(),
     		'country'   => $card->getBillingCountry(),
@@ -26,7 +26,8 @@ class PurchaseRequest extends AbstractRequest
             'retref'    => $this->getTransactionReference(),
     		'tokenize'  => "Y",
     		'capture'   => "Y",
-            'userfields' => $this->getUserfields()
+            'userfields' => $this->getUserfields(),
+            'email' => $card->getEmail()
     	);
         return $data;
     }
