@@ -13,8 +13,14 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "roundhouse/omnipay-cardconnect": "~1.0"
-    }
+        "roundhouse/omnipay-cardconnect": "master"
+    },
+    "repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/HarborCompliance/omnipay-cardconnect"
+    },
+    ]
 }
 ```
 
