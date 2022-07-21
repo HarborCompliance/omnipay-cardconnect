@@ -5,7 +5,7 @@ namespace Omnipay\Cardconnect;
 use Omnipay\Common\AbstractGateway;
 
 /**
- * Cardconnect Gateway
+ * Cardconnect Gateway.
  *
  * This gateway is useful for testing. It simply authorizes any payment made using a valid
  * credit card number and expiry.
@@ -55,18 +55,17 @@ use Omnipay\Common\AbstractGateway;
  */
 class Gateway extends AbstractGateway
 {
-    
     public function getName()
     {
         return 'Cardconnect';
     }
-    
+
     /*
      ★ ★ ★ Jeremy Bueler (buelerj) *************************************
          Getters
-    ********************************************************************** 
+    **********************************************************************
     */
-    
+
     public function getMerchantId()
     {
         return $this->getParameter('merchantId');
@@ -100,7 +99,7 @@ class Gateway extends AbstractGateway
     /*
      ★ ★ ★ Jeremy Bueler (buelerj) *************************************
          Setters
-    ********************************************************************** 
+    **********************************************************************
     */
     public function setMerchantId($value)
     {
@@ -111,10 +110,12 @@ class Gateway extends AbstractGateway
     {
         return $this->setParameter('apiUsername', $value);
     }
+
     public function setApiHost($value)
     {
         return $this->setParameter('apiHost', $value);
     }
+
     public function setApiPort($value)
     {
         return $this->setParameter('apiPort', $value);
@@ -129,34 +130,32 @@ class Gateway extends AbstractGateway
     {
         return $this->setParameter('testMode', $value);
     }
-    
-    
+
     /*
      ★ ★ ★ Jeremy Bueler (buelerj) *************************************
-         
-    ********************************************************************** 
+
+    **********************************************************************
     */
-    
+
     public function getDefaultParameters()
     {
-        $params = array(
-          'merchantId' => '',
-          'apiHost' => '',
-          'apiPort' => '',
-          'apiUsername' => '',
-          'apiPassword' => '',
-          'testMode' => false
-        );
+        $params = [
+            'merchantId' => '496160873888', // As indicated on https://developer.cardconnect.com/guides/cardpointe-gateway
+            'apiHost' => '',
+            'apiUsername' => 'testing',
+            'apiPassword' => 'testing123',
+            'testMode' => true,
+          ];
+
         return $params;
     }
 
     /**
      * Create an authorize request.
      *
-     * @param array $parameters
      * @return \Omnipay\Cardconnect\Message\AuthorizeRequest
      */
-    public function authorize(array $parameters = array())
+    public function authorize(array $parameters = [])
     {
         return $this->createRequest('\Omnipay\Cardconnect\Message\AuthorizeRequest', $parameters);
     }
@@ -164,10 +163,9 @@ class Gateway extends AbstractGateway
     /**
      * Create a purchase request.
      *
-     * @param array $parameters
      * @return \Omnipay\Cardconnect\Message\PurchaseRequest
      */
-    public function purchase(array $parameters = array())
+    public function purchase(array $parameters = [])
     {
         return $this->createRequest('\Omnipay\Cardconnect\Message\PurchaseRequest', $parameters);
     }
@@ -175,10 +173,9 @@ class Gateway extends AbstractGateway
     /**
      * Create a capture request.
      *
-     * @param array $parameters
      * @return \Omnipay\Cardconnect\Message\CaptureRequest
      */
-    public function capture(array $parameters = array())
+    public function capture(array $parameters = [])
     {
         return $this->createRequest('\Omnipay\Cardconnect\Message\CaptureRequest', $parameters);
     }
@@ -186,10 +183,9 @@ class Gateway extends AbstractGateway
     /**
      * Create a void request.
      *
-     * @param array $parameters
      * @return \Omnipay\Cardconnect\Message\VoidRequest
      */
-    public function void(array $parameters = array())
+    public function void(array $parameters = [])
     {
         return $this->createRequest('\Omnipay\Cardconnect\Message\VoidRequest', $parameters);
     }
@@ -197,11 +193,20 @@ class Gateway extends AbstractGateway
     /**
      * Create a refund request.
      *
-     * @param array $parameters
      * @return \Omnipay\Cardconnect\Message\RefundRequest
      */
-    public function refund(array $parameters = array())
+    public function refund(array $parameters = [])
     {
         return $this->createRequest('\Omnipay\Cardconnect\Message\RefundRequest', $parameters);
+    }
+
+    /**
+     * Get transaction status.
+     *
+     * @return void
+     */
+    public function status(array $parameters = [])
+    {
+        return $this->createRequest('\Omnipay\Cardconnect\Message\InquireRequest', $parameters);
     }
 }
