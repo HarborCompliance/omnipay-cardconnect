@@ -45,6 +45,11 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->getParameter('testMode');
     }
 
+    public function getTransactionDate()
+    {
+        return $this->getParameter('transactionDate');
+    }
+
     /*
      **********************************************************************
          Setters
@@ -73,6 +78,14 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function setApiPassword($value)
     {
         return $this->setParameter('apiPassword', $value);
+    }
+
+    /**
+     * Valid formats - MMDD or YYYYMMDD
+     */
+    public function setTransactionDate($value)
+    {
+        return $this->setParameter('transactionDate', $value);
     }
 
     public function sendData($data)
