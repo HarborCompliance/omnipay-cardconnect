@@ -199,6 +199,26 @@ class Gateway extends AbstractGateway
     {
         return $this->createRequest('\Omnipay\Cardconnect\Message\RefundRequest', $parameters);
     }
+    
+    /**
+     * Create a funding request.
+     *
+     * @return \Omnipay\Cardconnect\Message\FundingRequest
+     */
+    public function funding(array $parameters = [])
+    {
+        return $this->createRequest('\Omnipay\Cardconnect\Message\FundingRequest', $parameters);
+    }
+    
+    /**
+     * Create a inquire request.
+     *
+     * @return \Omnipay\Cardconnect\Message\InquireRequest
+     */
+    public function inquire(array $parameters = [])
+    {
+        return $this->createRequest('\Omnipay\Cardconnect\Message\InquireRequest', $parameters);
+    }
 
     /**
      * Get transaction status.
