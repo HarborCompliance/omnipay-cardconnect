@@ -159,6 +159,16 @@ class Gateway extends AbstractGateway
     {
         return $this->createRequest('\Omnipay\Cardconnect\Message\AuthorizeRequest', $parameters);
     }
+    
+    /**
+     * Create an authorize ach request.
+     *
+     * @return \Omnipay\Cardconnect\Message\AuthorizeAchRequest
+     */
+    public function authorizeAch(array $parameters = [])
+    {
+        return $this->createRequest('\Omnipay\Cardconnect\Message\AuthorizeAchRequest', $parameters);
+    }
 
     /**
      * Create a purchase request.
