@@ -49,6 +49,66 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         return $this->getParameter('transactionDate');
     }
+    
+    public function getPaymentOrigin()
+    {
+        return $this->getParameter('ecomind');
+    }
+    
+    public function getBankAccountType()
+    {
+        return $this->getParameter('accttype');
+    }
+
+    public function getCapture()
+    {
+        return $this->getParameter('capture') ?? 'y';
+    }
+    
+    public function getPurchaseOrderNumber()
+    {
+        return $this->getParameter('ponumber');
+    }
+    
+    public function getOrderId()
+    {
+        return $this->getParameter('orderid');
+    }
+    
+    public function getTaxAmount()
+    {
+        return $this->getParameter('taxamnt');
+    }
+    
+    public function getDutyAmount()
+    {
+        return $this->getParameter('dutyamnt');
+    }
+    
+    public function getOrderDate()
+    {
+        return $this->getParameter('orderdate');
+    }
+    
+    public function getFreightAmount()
+    {
+        return $this->getParameter('frtamnt');
+    }
+    
+    public function getToZipCode()
+    {
+        return $this->getParameter('shiptozip');
+    }
+    
+    public function getFromZipCode()
+    {
+        return $this->getParameter('shipfromzip');
+    }
+    
+    public function getCountry()
+    {
+        return $this->getParameter('shiptocountry');
+    }
 
     /*
      **********************************************************************
@@ -78,6 +138,66 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function setApiPassword($value)
     {
         return $this->setParameter('apiPassword', $value);
+    }
+
+    public function setPaymentOrigin($value)
+    {
+        return $this->setParameter('ecomind', $value);
+    }
+    
+    public function setBankAccountType($value)
+    {
+        return $this->setParameter('accttype', $value);
+    }
+
+    public function setCapture($value)
+    {
+        return $this->setParameter('capture', $value);
+    }
+    
+    public function setPurchaseOrderNumber($value)
+    {
+        return $this->setParameter('ponumber', $value);
+    }
+    
+    public function setOrderId($value)
+    {
+        return $this->setParameter('orderid', $value);
+    }
+    
+    public function setTaxAmount($value)
+    {
+        return $this->setParameter('taxamnt', $value);
+    }
+    
+    public function setDutyAmount($value)
+    {
+        return $this->setParameter('dutyamnt', $value);
+    }
+    
+    public function setOrderDate($value)
+    {
+        return $this->setParameter('orderdate', $value);
+    }
+    
+    public function setFreightAmount($value)
+    {
+        return $this->setParameter('frtamnt', $value);
+    }
+    
+    public function setToZipCode($value)
+    {
+        return $this->setParameter('shiptozip', $value);
+    }
+    
+    public function setFromZipCode($value)
+    {
+        return $this->setParameter('shipfromzip', $value);
+    }
+    
+    public function setCountry($value)
+    {
+        return $this->setParameter('shiptocountry', $value);
     }
 
     /**
