@@ -50,12 +50,12 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->getParameter('transactionDate');
     }
     
-    public function getPaymentOrigin()
+    public function getEcomind()
     {
         return $this->getParameter('ecomind');
     }
     
-    public function getBankAccountType()
+    public function getAccttype()
     {
         return $this->getParameter('accttype');
     }
@@ -65,47 +65,47 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->getParameter('capture') ?? 'y';
     }
     
-    public function getPurchaseOrderNumber()
+    public function getPonumber()
     {
         return $this->getParameter('ponumber');
     }
     
-    public function getOrderId()
+    public function getOrderid()
     {
         return $this->getParameter('orderid');
     }
     
-    public function getTaxAmount()
+    public function getTaxamnt()
     {
         return $this->getParameter('taxamnt');
     }
     
-    public function getDutyAmount()
+    public function getDutyamnt()
     {
         return $this->getParameter('dutyamnt');
     }
     
-    public function getOrderDate()
+    public function getOrderdate()
     {
         return $this->getParameter('orderdate');
     }
     
-    public function getFreightAmount()
+    public function getFrtamnt()
     {
         return $this->getParameter('frtamnt');
     }
     
-    public function getToZipCode()
+    public function getShiptozip()
     {
         return $this->getParameter('shiptozip');
     }
     
-    public function getFromZipCode()
+    public function getShipfromzip()
     {
         return $this->getParameter('shipfromzip');
     }
     
-    public function getCountry()
+    public function getShiptocountry()
     {
         return $this->getParameter('shiptocountry');
     }
@@ -140,12 +140,12 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('apiPassword', $value);
     }
 
-    public function setPaymentOrigin($value)
+    public function setEcomind($value)
     {
         return $this->setParameter('ecomind', $value);
     }
     
-    public function setBankAccountType($value)
+    public function setAccttype($value)
     {
         return $this->setParameter('accttype', $value);
     }
@@ -155,47 +155,47 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('capture', $value);
     }
     
-    public function setPurchaseOrderNumber($value)
+    public function setPonumber($value)
     {
         return $this->setParameter('ponumber', $value);
     }
     
-    public function setOrderId($value)
+    public function setOrderid($value)
     {
         return $this->setParameter('orderid', $value);
     }
     
-    public function setTaxAmount($value)
+    public function setTaxamnt($value)
     {
         return $this->setParameter('taxamnt', $value);
     }
     
-    public function setDutyAmount($value)
+    public function setDutyamnt($value)
     {
         return $this->setParameter('dutyamnt', $value);
     }
     
-    public function setOrderDate($value)
+    public function setOrderdate($value)
     {
         return $this->setParameter('orderdate', $value);
     }
     
-    public function setFreightAmount($value)
+    public function setFrtamnt($value)
     {
         return $this->setParameter('frtamnt', $value);
     }
     
-    public function setToZipCode($value)
+    public function setShiptozip($value)
     {
         return $this->setParameter('shiptozip', $value);
     }
     
-    public function setFromZipCode($value)
+    public function setShipfromzip($value)
     {
         return $this->setParameter('shipfromzip', $value);
     }
     
-    public function setCountry($value)
+    public function setShiptocountry($value)
     {
         return $this->setParameter('shiptocountry', $value);
     }
