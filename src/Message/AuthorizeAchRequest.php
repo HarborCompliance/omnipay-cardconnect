@@ -23,7 +23,7 @@ class AuthorizeAchRequest extends AbstractRequest
             'shiptozip' => $this->getShiptozip(),
             'shipfromzip' => $this->getShipfromzip(),
             'shiptocountry' => $this->getShiptocountry(),
-            'items' => $this->getItems(),
+            'items' => $this->getOrderItems(),
         ];
     }
 
