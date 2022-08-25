@@ -18,21 +18,7 @@ class FundingRequest extends AbstractRequest
 
     public function sendData($data)
     {
-        $response = $this->httpClient->request('GET', $this->getEndpoint($data), $this->getHeaders());
-
-        if ($response->getStatusCode() != 200) {
-            throw new \Exception($response->getReasonPhrase());
-        }
-
-        $json = json_decode($response->getBody()->getContents(), true);
-
-        $this->response = new Response($this, [
-            'respcode' => $json['respcode'] ?? null,
-            'voidable' => isset($json['voidable']) && $json['voidable'] === 'Y',
-            'refundable' => isset($json['refundable']) && $json['refundable'] === 'Y',
-        ]);
-
-        return $this->response;
+        return $this->handleResponse($this->httpClient->request('GET', $this->getEndpoint($data), $this->getHeaders()));
     }
 
     public function getEndpoint($data)

@@ -109,6 +109,11 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         return $this->getParameter('shiptocountry');
     }
+    
+    public function getOrderItems()
+    {
+        return $this->getParameter('orderItems');
+    }
 
     /*
      **********************************************************************
@@ -198,6 +203,11 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function setShiptocountry($value)
     {
         return $this->setParameter('shiptocountry', $value);
+    }
+    
+    public function setOrderItems($value)
+    {
+        return $this->setParameter('orderItems', $value);
     }
 
     /**
