@@ -9,6 +9,7 @@ class AuthorizeAchRequest extends AbstractRequest
         $this->validate('amount', 'token', 'accttype', 'ecomind');
 
         return [
+            'amount' => $this->getAmountInteger(),
             'merchid' => $this->getMerchantId(),
             'account' => $this->getToken(),
             'ecomind' => $this->getEcomind(),
