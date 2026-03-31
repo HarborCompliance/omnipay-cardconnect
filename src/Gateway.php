@@ -141,7 +141,7 @@ class Gateway extends AbstractGateway
     {
         $params = [
             'merchantId' => '496160873888', // As indicated on https://developer.cardconnect.com/guides/cardpointe-gateway
-            'apiHost' => '',
+            'apiHost' => 'fts-uat.cardconnect.com',
             'apiUsername' => 'testing',
             'apiPassword' => 'testing123',
             'testMode' => true,
